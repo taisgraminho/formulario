@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo HTML + PHP</title>
+</head>
+<style>
+    /*estilizar o corpo do formulário*/
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+        
+    }
+    /*class para centralizar o formulário*/
+    .box{
+        color:white;
+        position: absolute; /*caixa do tamanho do formulário*/
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0,0,0,0.8);
+        padding: 15px; /*espaço externo da borda*/
+        border-radius: 15px; /*arredondar as bordas*/
+        width: 22%;
+    }
+    fieldset{
+        border: 3px solid dodgerblue;
+    }
+    legend{
+        border: 3px solid dodgerblue;
+        padding: 10px;
+        text-align: center;
+        background-color: dodgerblue;
+        border-radius: 8px;
+    }
+    .inputBox{
+        position: relative;
+    }
+    .inputUser{
+        background: none;
+        border: none;
+        border-bottom: 1px solid  white;
+        outline: none;
+        color: white;
+        font-size: 15px;
+        width: 100%;
+        letter-spacing: 2px;
+    }
+    .submit{
+        background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+        width: 100%;
+        border: none;
+        padding: 15px;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+    .submit:hover{
+        background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+    }
+</style>
+<body> 
+    <div class = "box">
+    <form name="form1" method="post" action="recebe_dados.php">
+        <fieldset>
+        <legend><b>Formulário</b></legend>
+        <br>
+        <label>Nome: </label>
+        <input type="text" name="nome" class="inputUser" required>
+        <br><br>
+        <label>Bio: </label>
+        <textarea name="bio" class="inputUser" required ></textarea>
+        <br><br>
+        <label>Curso: </label>
+        <select name="curso" class="inputUser" required>
+            <option>escolha um curso...</option>
+            <option value="computacao">Ciência da Computação</option>
+            <option value="si">Sistemas de Informação</option>
+            <option value="das">Análise e Desenvolvimento de Sistemas</option>
+            <option value="eng">Engenharia de Computação</option>
+        </select>
+        <br><br>
+        <label>Sexo: </label>
+        <input type="radio" name="sexo" value="f"> Feminino
+        <input type="radio" name="sexo" value="m"> Masculino
+        <br><br>
+        <label>Data: </label>
+        <input type="date" name="data" class="inputUser" required>
+        <br><br>
+        <label>Hora: </label>
+        <input type="time" name="hora" class="inputUser" required>
+        <br><br>
+        <label>Idade: </label>
+        <input type="number" name="idade" class="inputUser" required>
+        <br><br>
+        <label>Linguagens de Programação: </label>
+        <br>
+        <input type="checkbox" name="lp[]" value="cpp"> C++
+        <br>
+        <input type="checkbox" name="lp[]" value="java"> Java
+        <br>
+        <input type="checkbox" name="lp[]" value="js"> JavaScript
+        <br>
+        <input type="checkbox" name="lp[]" value="php"> PHP
+
+        <br><br>
+        <input type="submit" name="enviar" value="Enviar" class="submit">  
+        </fieldset>      
+    </form>
+    </div>
+</body>
+</html>
